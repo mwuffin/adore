@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Be My Friend?</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', sans-serif;
+      text-align: center;
+      background-color: #ffe4e1;
+      color: #ff69b4;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2.5em;
+    }
+    .buttons {
+      margin-top: 20px;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    #yes {
+      background-color: #ffb6c1;
+      color: white;
+    }
+    #no {
+      background-color: #ffc0cb;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>Adorevenus, will you be my friend? 💖</h1>
+  <div class="buttons">
+    <button id="yes" onclick="yesClicked()">Yes</button>
+    <button id="no" onclick="noClicked()">No</button>
+  </div>
+  <p id="message"></p>
+
+  <script>
+    let yesButton = document.getElementById('yes');
+    let noButton = document.getElementById('no');
+    let message = document.getElementById('message');
+    let yesButtonSize = 1;
+
+    function yesClicked() {
+      message.textContent = "Yipiee!!! 🎉🎉🎉";
+      message.style.color = '#ff69b4';
+      yesButton.style.display = 'none';
+      noButton.style.display = 'none';
+    }
+
+    function noClicked() {
+      yesButtonSize *= 1.5; // Increase the size of the "Yes" button
+      yesButton.style.transform = `scale(${yesButtonSize})`;
+    }
+  </script>
+</body>
+</html>
